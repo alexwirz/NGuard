@@ -7,7 +7,7 @@ namespace NGuard.Specs
     {
         [Test]
         [ExpectedException(typeof(ContractViolated))]
-        public void WhenConditionIsFalseThatThrowsException()
+        public void WhenConditionIsFalseThenThrowsException()
         {
             Requires.That(1 > 2);
         }
