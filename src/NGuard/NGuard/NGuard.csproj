@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapturedValue.cs" />
+    <Compile Include="CollectionRequirement.cs" />
     <Compile Include="ContractViolated.cs" />
     <Compile Include="ExpressionExtensions.cs" />
     <Compile Include="Requirement.cs" />

@@ -24,5 +24,22 @@ namespace NGuard.Specs
         {
             Requires.Because("Insanity").That(1 + 1 == 1);
         }
+
+        [Test]
+        [ExpectedException(typeof(ContractViolated))]
+        public void RequiresThatNotNullThrowsExceptionWhenValueIsNull()
+        {
+            Requires.Because("Value must not be null").That(null).IsNotNull();
+        }
+
+        [Test]
+        [ExpectedException(typeof(ContractViolated))]
+        public void RequiresThatIsNotEmptyThrowsExceptionWhenEnumerableIsEmpty ()
+        {
+            Requires
+                .Because("Collection must not be empty")
+                .ThatCollection(new object[] { })
+                .IsNotEmpty();
+        }
     }
 }
