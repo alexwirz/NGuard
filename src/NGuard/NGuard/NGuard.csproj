@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContractViolated.cs" />
+    <Compile Include="Requirement.cs" />
     <Compile Include="Requires.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

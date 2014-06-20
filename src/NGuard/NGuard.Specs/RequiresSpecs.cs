@@ -1,9 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NGuard.Specs
 {
@@ -21,6 +16,13 @@ namespace NGuard.Specs
         public void WhenConditionIsTrueNoExceptionIsThrown()
         {
             Requires.That(2 * 2 == 4);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ContractViolated), ExpectedMessage = "Insanity")]
+        public void WhenDescriptionPassedWithBecauseThenTheDescriptionIncludedInTheContractViolatedException()
+        {
+            Requires.Because("Insanity").That(1 + 1 == 1);
         }
     }
 }
