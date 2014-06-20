@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace NGuard
 {
     public class Requirement
@@ -6,14 +7,13 @@ namespace NGuard
         private readonly bool _condition;
         private readonly string _description;
 
-        public Requirement(bool condition, string description)
-        {
-            _condition = condition;
-            _description = description;
-        }        
-
         public Requirement(string requirementDescription)
         {
+            if (requirementDescription == null)
+            {
+                throw new ArgumentNullException("requirementDescription");
+            }
+
             _description = requirementDescription;
         }
 
